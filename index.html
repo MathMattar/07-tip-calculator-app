@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tip Calculator</title>
+
+    <!-- reset -->
+    <link rel="stylesheet" href="./assets/css/reset.css">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body>
+    <main>
+        <img src="./assets/images/logo.svg" alt="Logo">
+        <section class="calculator">
+
+            <fieldset class="calculator__bill">
+                <form class="calculator__form--bill">
+                    <label for="bill" class="calculator__label--bill">Bill</label>
+                    <input type="number" name="bill" class="calculator__input--bill" id="bill" placeholder="0">
+                </form>
+            </fieldset>
+
+            <fieldset class="calculator__tip">
+                <form class="calculator__form--tip">
+                    <legend>Select Tip %</legend>
+                    <input type="button" class="calculator__tip--five" id="btn-tip-five" value="5%">
+                    <input type="button" class="calculator__tip--ten" id="btn-tip-ten" value="10%">
+                    <input type="button" class="calculator__tip--fifteen" id="btn-tip-fifteen" value="15%">
+                    <input type="button" class="calculator__tip--twenty-five" id="btn-tip-twenty-five" value="25%">
+                    <input type="button" class="calculator__tip--fifty" id="btn-tip-fifty" value="50%">
+                    <input type="number" class="calculator__tip--custom" id="btn-tip-custom" placeholder="Custom">
+                </form>
+            </fieldset>
+
+            <fieldset class="calculator__people">
+                <form class="calculator__form--people">
+                    <label for="people" class="calculator__label--people">Number of People</label>
+                    <input type="number" name="people" class="calculator__input--people" id="people" placeholder="0">
+                </form>
+            </fieldset>
+
+            <section class="display-result">
+                <div class="display-result__tip-amount">
+                    <h1>Tip Amout</h1>
+                    <p>/ person</p>
+                    <div class="display-result__result--tip-amout"></div>
+                </div>
+                <div class="result__total">
+                    <h2>Total</h2>
+                    <p>/ person</p>
+                    <div class="display-result__result--total"></div>
+                </div>
+                <button>Reset</button>
+            </section>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
