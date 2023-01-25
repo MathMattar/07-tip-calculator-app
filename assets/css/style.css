@@ -7,6 +7,22 @@
     --light-grayish-cyan: hsl(185, 41%, 84%);
     --very-light-grayish-cyan: hsl(189, 41%, 97%);
     --white: hsl(0, 0%, 100%);
+    /* font size */
+    --size-13: 1.3rem;
+    --size-16: 1.6rem;
+    --size-18: 1.8rem;
+    --size-24: 2.4rem;
+    /* width */
+    --w-icon: 1.3rem;
+    --w-input: 38rem;
+    --w-btn-tip: 11.7rem;
+    /* height */
+    --h-input-btn: 4.8rem;
+    /* padding */
+    --p-input: 1.8rem;
+    /* border radius */
+    --br-input-reset: .6rem;
+    --br-btn: .4rem;
 }
 
 * {
@@ -24,7 +40,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: var(--light-grayish-cyan);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 main {
@@ -35,98 +51,119 @@ main {
 
 .logo {
     width: 8.8rem;
+    margin-bottom: 8.8rem;
 }
 
 .calculator {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     background-color: var(--white);
-    width: 92rem;
-    height: 48rem;
-    padding: 4rem 1.8rem 4rem 3.2rem;
+    min-width: 92rem;
+    min-height: 48rem;
+    padding: 3.2rem 3.2rem 3.2rem 4.8rem;
     border-radius: 2.4rem;
 }
 
-.calculator--input {
-    padding: 1rem;
+.bill {
+    position: relative;
 }
 
-.bill,
+.bill__label {
+    display: block;
+    font-size: var(--size-16);
+    color: var(--dark-grayish-cyan);
+}
+
+.bill__icon {
+    position: absolute;
+    width: var(--w-icon);
+    top: 35%;
+    left: 1.8rem;
+}
+
+.bill__input {
+    font-size: var(--size-24);
+    text-align: end;
+    width: var(--w-input);
+    height: var(--h-input-btn);
+    color: var(--very-dark-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: var(--br-input-reset);
+    padding: var(--p-input);
+    margin: 1.2rem 0 4.6rem;
+}
+
+.bill__input::placeholder{
+    color: var(--very-dark-cyan);
+}
+
+.tip {
+    display: grid;
+    grid-template-columns: var(--w-btn-tip) var(--w-btn-tip) var(--w-btn-tip);
+    grid-template-rows: var(--h-input-btn) var(--h-input-btn);
+    column-gap: 1.4rem;
+    row-gap: 1.6rem;
+    padding: 1.8rem 0;
+}
+
+.tip__label {
+    display: block;
+    font-size: var(--size-16);
+    color: var(--dark-grayish-cyan);
+
+}
+
+.tip__btn {
+    font-size: var(--size-24);
+    width: var(--w-btn-tip);
+    height: var(--h-input-btn);
+    color: var(--white);
+    background-color: var(--very-dark-cyan);
+    border-radius: var(--br-btn);
+}
+
+.tip__btn--custom {
+    font-size: var(--size-24);
+    text-align: center;
+    width: var(--w-btn-tip);
+    height: var(--h-input-btn);
+    color: var(--very-dark-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    border-radius: var(--br-btn);
+}
+
+.people__label {
+    display: block;
+    font-size: var(--size-16);
+    color: var(--dark-grayish-cyan);
+    margin: 2.8rem 0 .8rem;
+}
+
 .people {
     position: relative;
 }
 
-.bill__label,
-.tip__label,
-.people__label {
-    display: block;
-    font-size: 1.6rem;
-    color: var(--grayish-cyan);
-}
-
-.bill__label {
-    margin-bottom: 1.2rem;
-}
-
-.bill__input{
-    margin-bottom: 4.5rem;
-}
-
-.icon--bill {
+.people__icon {
     position: absolute;
-    width: 1.3rem;
+    width: var(--w-icon);
+    top: 56%;
     left: 1.8rem;
-    top: 4.2rem;
 }
 
-.bill__input,
-.tip__custom,
 .people__input {
-    font-size: 2.4rem;
+    font-size: var(--size-24);
+    text-align: end;
+    width: var(--w-input);
+    height: var(--h-input-btn);
     color: var(--very-dark-cyan);
     background-color: var(--very-light-grayish-cyan);
-    height: 4.8rem;
+    border-radius: var(--br-input-reset);
+    padding: var(--p-input);
 }
 
-.bill__input,
-.people__input{
-    text-align: end;
-    width: 38rem;
-    padding: 0 1.8rem;
-    border-radius: 0.6rem;
-}
-
-.tip__label{
-    margin-bottom: 1.8rem;
-}
-
-.tip__btn {
-    font-size: 2.4rem;
-    color: var(--white);
-    background-color: var(--very-dark-cyan);
-    width: 11.7rem;
-    height: 4.8rem;
-    border-radius: .4rem;
-    margin-bottom: 1.6rem;
-}
-
-.tip__custom {
-    text-align: center;
-    width: 11.7rem;
-    height: 4.8rem;
-    border-radius: .4rem;
-    margin-bottom: 1.6rem;
-}
-
-.people__label{
-    margin: 3rem 0 0.8rem;
-}
-
-.icon--people {
-    position: absolute;
-    width: 1.3rem;
-    left: 1.8rem;
-    top: 4rem;
+.people__input::placeholder{
+    color: var(--very-dark-cyan);
 }
 
 .calculator--result {
@@ -134,11 +171,9 @@ main {
     flex-direction: column;
     justify-content: space-between;
     background-color: var(--very-dark-cyan);
-    width: 41.3rem;
     min-width: 41.3rem;
-    height: 41.7rem;
-    padding: 0 4rem 4.7rem 4rem;
-    margin-left: 4.8rem;
+    min-height: 41.7rem;
+    padding: 5.9rem 4rem 4.7rem 4rem;
     border-radius: 1.6rem;
 }
 
@@ -146,30 +181,31 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 5.8rem 0 0;
 }
 
 .text__title {
-    font-size: 1.6rem;
+    font-size: var(--size-16);
     color: var(--white);
-    margin-bottom: .8rem;
+    margin-bottom: .6rem;
 }
 
 .text__paragraph {
-    font-size: 1.3rem;
+    font-size: var(--size-13);
     color: var(--grayish-cyan);
 }
 
 .result__calculation {
     font-size: 4.6rem;
     color: var(--strong-cyan);
+    margin-bottom: 6rem;
 }
 
-.reset {
-    font-size: 1.8rem;
+.result__reset {
+    font-size: var(--size-18);
+    text-transform: uppercase;
     color: var(--very-dark-cyan);
     background-color: var(--strong-cyan);
     width: 33.3rem;
     height: 4.8rem;
-    border-radius: .6rem;
+    border-radius: var(--br-input-reset);
 }
