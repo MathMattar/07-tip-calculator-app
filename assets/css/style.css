@@ -1,6 +1,4 @@
 :root {
-    --standard-font: 'Space Mono', monospace;
-    --standard-font-size: 62.5%;
     /* color */
     --strong-cyan: hsl(172, 67%, 45%);
     --very-dark-cyan: hsl(183, 100%, 15%);
@@ -11,7 +9,167 @@
     --white: hsl(0, 0%, 100%);
 }
 
+* {
+    font-family: "Space Mono", monospace;
+    box-sizing: border-box;
+    border: none;
+}
+
 html {
-    font-family: var(--standard-font);
-    font-size: var(--standard-font-size);
+    font-size: 62.5%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-grayish-cyan);
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo {
+    width: 8.8rem;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+    width: 92rem;
+    height: 48rem;
+    padding: 4rem 1.8rem 4rem 3.2rem;
+    border-radius: 2.4rem;
+}
+
+.calculator--input {
+    padding: 1rem;
+}
+
+.bill,
+.people {
+    position: relative;
+}
+
+.bill__label,
+.tip__label,
+.people__label {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--grayish-cyan);
+}
+
+.bill__label {
+    margin-bottom: 1.2rem;
+}
+
+.bill__input{
+    margin-bottom: 4.5rem;
+}
+
+.icon--bill {
+    position: absolute;
+    width: 1.3rem;
+    left: 1.8rem;
+    top: 4.2rem;
+}
+
+.bill__input,
+.tip__custom,
+.people__input {
+    font-size: 2.4rem;
+    color: var(--very-dark-cyan);
+    background-color: var(--very-light-grayish-cyan);
+    height: 4.8rem;
+}
+
+.bill__input,
+.people__input{
+    text-align: end;
+    width: 38rem;
+    padding: 0 1.8rem;
+    border-radius: 0.6rem;
+}
+
+.tip__label{
+    margin-bottom: 1.8rem;
+}
+
+.tip__btn {
+    font-size: 2.4rem;
+    color: var(--white);
+    background-color: var(--very-dark-cyan);
+    width: 11.7rem;
+    height: 4.8rem;
+    border-radius: .4rem;
+    margin-bottom: 1.6rem;
+}
+
+.tip__custom {
+    text-align: center;
+    width: 11.7rem;
+    height: 4.8rem;
+    border-radius: .4rem;
+    margin-bottom: 1.6rem;
+}
+
+.people__label{
+    margin: 3rem 0 0.8rem;
+}
+
+.icon--people {
+    position: absolute;
+    width: 1.3rem;
+    left: 1.8rem;
+    top: 4rem;
+}
+
+.calculator--result {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--very-dark-cyan);
+    width: 41.3rem;
+    min-width: 41.3rem;
+    height: 41.7rem;
+    padding: 0 4rem 4.7rem 4rem;
+    margin-left: 4.8rem;
+    border-radius: 1.6rem;
+}
+
+.result {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5.8rem 0 0;
+}
+
+.text__title {
+    font-size: 1.6rem;
+    color: var(--white);
+    margin-bottom: .8rem;
+}
+
+.text__paragraph {
+    font-size: 1.3rem;
+    color: var(--grayish-cyan);
+}
+
+.result__calculation {
+    font-size: 4.6rem;
+    color: var(--strong-cyan);
+}
+
+.reset {
+    font-size: 1.8rem;
+    color: var(--very-dark-cyan);
+    background-color: var(--strong-cyan);
+    width: 33.3rem;
+    height: 4.8rem;
+    border-radius: .6rem;
 }
