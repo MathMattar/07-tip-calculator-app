@@ -26,49 +26,53 @@
 
 <body>
     <main>
-        <img src="./assets/images/logo.svg" alt="Splitter logo">
+        <img src="./assets/images/logo.svg" class="logo" alt="Splitter logo">
         <section class="calculator">
 
-            <fieldset class="calculator__bill">
-                <form class="calculator__form--bill">
-                    <label for="bill" class="calculator__label--bill">Bill</label>
-                    <img src="./assets/images/icon-dollar.svg" alt="Icon dollar">
-                    <input type="number" name="bill" class="calculator__input--bill" id="bill" placeholder="0">
+            <section class="calculator--input">
+                <form class="bill">
+                    <label for="bill" class="bill__label">Bill</label>
+                    <input type="number" class="bill__input" id="bill" placeholder="0">
+                    <img src="./assets/images/icon-dollar.svg" class="icon--bill" alt="Icon dollar">
                 </form>
-            </fieldset>
 
-            <fieldset class="calculator__tip">
-                <form class="calculator__form--tip">
-                    <legend>Select Tip %</legend>
-                    <input type="button" class="calculator__tip--five" id="btn-tip-five" value="5%">
-                    <input type="button" class="calculator__tip--ten" id="btn-tip-ten" value="10%">
-                    <input type="button" class="calculator__tip--fifteen" id="btn-tip-fifteen" value="15%">
-                    <input type="button" class="calculator__tip--twenty-five" id="btn-tip-twenty-five" value="25%">
-                    <input type="button" class="calculator__tip--fifty" id="btn-tip-fifty" value="50%">
-                    <input type="number" class="calculator__tip--custom" id="btn-tip-custom" placeholder="Custom">
+                <form class="tip">
+                    <legend class="tip__label">Select Tip %</legend>
+                    <button type="button" class="tip__btn" id="btn-one">5%</button>
+                    <button type="button" class="tip__btn" id="btn-two">10%</button>
+                    <button type="button" class="tip__btn" id="btn-three">15%</button>
+                    <button type="button" class="tip__btn" id="btn-four">25%</button>
+                    <button type="button" class="tip__btn" id="btn-five">50%</button>
+                    <input type="number" class="tip__custom" id="btn-custom" placeholder="Custom">
                 </form>
-            </fieldset>
 
-            <fieldset class="calculator__people">
-                <form class="calculator__form--people">
-                    <label for="people" class="calculator__label--people">Number of People</label>
-                    <img src="./assets/images/icon-person.svg" alt="Icon person">
-                    <input type="number" name="people" class="calculator__input--people" id="people" placeholder="0">
+                <form class="people">
+                    <label for="people" class="people__label">Number of People</label>
+                    <input type="number" class="people__input" id="people" placeholder="0">
+                    <img src="./assets/images/icon-person.svg" class="icon--people" alt="Icon person">
                 </form>
-            </fieldset>
+            </section>
 
-            <section class="display-result">
-                <div class="display-result__tip-amount">
-                    <h1>Tip Amout</h1>
-                    <p>/ person</p>
-                    <div class="display-result__result--tip-amout"></div>
-                </div>
-                <div class="result__total">
-                    <h2>Total</h2>
-                    <p>/ person</p>
-                    <div class="display-result__result--total"></div>
-                </div>
-                <button>Reset</button>
+            <section class="calculator--result">
+                <section class="container">
+                    <div class="result">
+                        <div class="text">
+                            <h1 class="text__title">Tip Amout</h1>
+                            <p class="text__paragraph">/ person</p>
+                        </div>
+                        <div class="result__calculation">$0.00</div>
+                    </div>
+
+                    <div class="result">
+                        <div class="text">
+                            <h2 class="text__title">Total</h2>
+                            <p class="text__paragraph">/ person</p>
+                        </div>
+                        <div class="result__calculation">$0.00</div>
+                    </div>
+                </section>
+
+                <button type="reset" class="reset" id="reset">Reset</button>
             </section>
         </section>
     </main>
