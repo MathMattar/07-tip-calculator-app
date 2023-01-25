@@ -27,34 +27,34 @@
 <body>
     <main>
         <img src="./assets/images/logo.svg" class="logo" alt="Splitter logo">
-        <section class="calculator">
 
+        <section class="calculator">
             <section class="calculator--input">
                 <form class="bill">
                     <label for="bill" class="bill__label">Bill</label>
+                    <img src="./assets/images/icon-dollar.svg" class="bill__icon" alt="Icon dollar">
                     <input type="number" class="bill__input" id="bill" placeholder="0">
-                    <img src="./assets/images/icon-dollar.svg" class="icon--bill" alt="Icon dollar">
                 </form>
 
+                <legend class="tip__label">Select Tip %</legend>
                 <form class="tip">
-                    <legend class="tip__label">Select Tip %</legend>
                     <button type="button" class="tip__btn" id="btn-one">5%</button>
                     <button type="button" class="tip__btn" id="btn-two">10%</button>
                     <button type="button" class="tip__btn" id="btn-three">15%</button>
                     <button type="button" class="tip__btn" id="btn-four">25%</button>
                     <button type="button" class="tip__btn" id="btn-five">50%</button>
-                    <input type="number" class="tip__custom" id="btn-custom" placeholder="Custom">
+                    <input type="number" class="tip__btn--custom" id="btn-six" placeholder="Custom">
                 </form>
 
                 <form class="people">
                     <label for="people" class="people__label">Number of People</label>
+                    <img src="./assets/images/icon-person.svg" class="people__icon" alt="Icon person">
                     <input type="number" class="people__input" id="people" placeholder="0">
-                    <img src="./assets/images/icon-person.svg" class="icon--people" alt="Icon person">
                 </form>
             </section>
 
             <section class="calculator--result">
-                <section class="container">
+                <section class="container-result">
                     <div class="result">
                         <div class="text">
                             <h1 class="text__title">Tip Amout</h1>
@@ -65,14 +65,14 @@
 
                     <div class="result">
                         <div class="text">
-                            <h2 class="text__title">Total</h2>
+                            <h1 class="text__title">Total</h1>
                             <p class="text__paragraph">/ person</p>
                         </div>
                         <div class="result__calculation">$0.00</div>
                     </div>
                 </section>
 
-                <button type="reset" class="reset" id="reset">Reset</button>
+                <button type="reset" class="result__reset" id="reset">Reset</button>
             </section>
         </section>
     </main>
