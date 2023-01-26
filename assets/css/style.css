@@ -13,12 +13,12 @@
     --size-18: 1.8rem;
     --size-24: 2.4rem;
     /* width */
-    --w-icon: 1.3rem;
     --w-input: 38rem;
     --w-btn-tip: 11.7rem;
     --w-input-mobile: 31.1rem;
     --w-btn-tip-mobile: 14.7rem;
     /* height */
+    --w-icon: 1.8rem;
     --h-input-btn: 4.8rem;
     /* padding */
     --p-input: 1.8rem;
@@ -68,24 +68,38 @@ main {
     border-radius: 2.4rem;
 }
 
-.bill {
-    position: relative;
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
-.bill__label {
-    display: block;
+.info__label {
     font-size: var(--size-16);
     color: var(--dark-grayish-cyan);
 }
 
-.bill__icon {
+.info__alert {
+    display: inline-block;
+    font-size: var(--size-16);
+    text-align: right;
+    color: darkorange;
+}
+
+.input {
+    position: relative;
+}
+
+.input__icon {
     position: absolute;
-    width: var(--w-icon);
-    top: 35%;
+    height: var(--h-icon);
+    top: 1.5rem;
     left: 1.8rem;
 }
 
-.bill__input {
+.input__box {
+    display: block;
     font-size: var(--size-24);
     text-align: end;
     width: var(--w-input);
@@ -94,31 +108,36 @@ main {
     background-color: var(--very-light-grayish-cyan);
     border-radius: var(--br-input-reset);
     padding: var(--p-input);
-    margin: 1.2rem 0 4.6rem;
+    margin-top: 1.2rem;
     cursor: pointer;
 }
 
-.bill__input::placeholder {
+.box::placeholder {
     color: var(--very-dark-cyan);
 }
 
+.box:focus {
+    border: 2px solid var(--strong-cyan);
+}
+
+.alert__border {
+    border: 2px solid darkorange;
+}
+
 .tip {
+    margin: 4.6rem 0 4.6rem;
+}
+
+.tip__grid {
     display: grid;
     grid-template-columns: var(--w-btn-tip) var(--w-btn-tip) var(--w-btn-tip);
     grid-template-rows: var(--h-input-btn) var(--h-input-btn);
     column-gap: 1.4rem;
     row-gap: 1.6rem;
-    padding: 1.8rem 0;
+    margin-top: 1.8rem
 }
 
-.tip__label {
-    display: block;
-    font-size: var(--size-16);
-    color: var(--dark-grayish-cyan);
-
-}
-
-.tip__btn {
+.tip__button {
     font-size: var(--size-24);
     width: var(--w-btn-tip);
     height: var(--h-input-btn);
@@ -128,7 +147,17 @@ main {
     cursor: pointer;
 }
 
-.tip__btn--custom {
+.tip__button:focus {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip__button:hover {
+    background-color: hsla(172, 67%, 45%, 0.5);
+    color: var(--very-dark-cyan);
+}
+
+.tip__button--custom {
     font-size: var(--size-24);
     text-align: end;
     width: var(--w-btn-tip);
@@ -139,42 +168,12 @@ main {
     cursor: pointer;
 }
 
-.tip__btn--custom::placeholder{
+.tip__button--custom::placeholder {
     text-align: center;
 }
 
-.people__label {
-    display: block;
-    font-size: var(--size-16);
-    color: var(--dark-grayish-cyan);
-    margin: 2.8rem 0 .8rem;
-}
-
-.people {
-    position: relative;
-}
-
-.people__icon {
-    position: absolute;
-    width: var(--w-icon);
-    top: 56%;
-    left: 1.8rem;
-}
-
-.people__input {
-    font-size: var(--size-24);
-    text-align: end;
-    width: var(--w-input);
-    height: var(--h-input-btn);
-    color: var(--very-dark-cyan);
-    background-color: var(--very-light-grayish-cyan);
-    border-radius: var(--br-input-reset);
-    padding: var(--p-input);
-    cursor: pointer;
-}
-
-.people__input::placeholder {
-    color: var(--very-dark-cyan);
+.tip__button--custom:focus {
+    border: 2px solid var(--strong-cyan);
 }
 
 .calculator--result {
@@ -211,7 +210,7 @@ main {
     margin-bottom: 6rem;
 }
 
-.result__reset {
+.calculator__reset {
     font-size: var(--size-18);
     text-transform: uppercase;
     color: var(--very-dark-cyan);
@@ -222,25 +221,14 @@ main {
     cursor: pointer;
 }
 
-.bill__input:focus,
-.tip__btn--custom:focus,
-.people__input:focus {
-    border: 2px solid var(--strong-cyan);
-}
-
-.tip__btn:focus {
-    background-color: var(--strong-cyan);
-    color: var(--very-dark-cyan);
-}
-
-.tip__btn:hover {
-    background-color: hsla(172, 67%, 45%, 0.5);
-    color: var(--very-dark-cyan);
-}
-
-.result__reset:hover {
+.calculator__reset:hover {
     background-color: var(--light-grayish-cyan);
 }
+
+
+
+
+
 
 @media only screen and (max-width: 950px) {
 
