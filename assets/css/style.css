@@ -16,6 +16,8 @@
     --w-icon: 1.3rem;
     --w-input: 38rem;
     --w-btn-tip: 11.7rem;
+    --w-input-mobile: 31.1rem;
+    --w-btn-tip-mobile: 14.7rem;
     /* height */
     --h-input-btn: 4.8rem;
     /* padding */
@@ -29,6 +31,7 @@
     font-family: "Space Mono", monospace;
     box-sizing: border-box;
     border: none;
+    outline: none;
 }
 
 html {
@@ -92,9 +95,10 @@ main {
     border-radius: var(--br-input-reset);
     padding: var(--p-input);
     margin: 1.2rem 0 4.6rem;
+    cursor: pointer;
 }
 
-.bill__input::placeholder{
+.bill__input::placeholder {
     color: var(--very-dark-cyan);
 }
 
@@ -121,16 +125,22 @@ main {
     color: var(--white);
     background-color: var(--very-dark-cyan);
     border-radius: var(--br-btn);
+    cursor: pointer;
 }
 
 .tip__btn--custom {
     font-size: var(--size-24);
-    text-align: center;
+    text-align: end;
     width: var(--w-btn-tip);
     height: var(--h-input-btn);
     color: var(--very-dark-cyan);
     background-color: var(--very-light-grayish-cyan);
     border-radius: var(--br-btn);
+    cursor: pointer;
+}
+
+.tip__btn--custom::placeholder{
+    text-align: center;
 }
 
 .people__label {
@@ -160,9 +170,10 @@ main {
     background-color: var(--very-light-grayish-cyan);
     border-radius: var(--br-input-reset);
     padding: var(--p-input);
+    cursor: pointer;
 }
 
-.people__input::placeholder{
+.people__input::placeholder {
     color: var(--very-dark-cyan);
 }
 
@@ -208,4 +219,100 @@ main {
     width: 33.3rem;
     height: 4.8rem;
     border-radius: var(--br-input-reset);
+    cursor: pointer;
+}
+
+.bill__input:focus,
+.tip__btn--custom:focus,
+.people__input:focus {
+    border: 2px solid var(--strong-cyan);
+}
+
+.tip__btn:focus {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.tip__btn:hover {
+    background-color: hsla(172, 67%, 45%, 0.5);
+    color: var(--very-dark-cyan);
+}
+
+.result__reset:hover {
+    background-color: var(--light-grayish-cyan);
+}
+
+@media only screen and (max-width: 950px) {
+
+    .logo {
+        margin: 5rem 0 4rem;
+    }
+
+    .calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 37.5rem;
+        min-width: 37.5rem;
+        height: 78.9rem;
+        min-height: 78.9rem;
+        padding: 3.8rem 2.4rem 3.2rem 2.4rem;
+    }
+
+    .calculator--input {
+        padding: 0 .8rem;
+    }
+
+    .bill__input {
+        width: var(--w-input-mobile);
+        margin-top: 1.2rem;
+        margin-right: auto;
+        margin-bottom: 3.8rem;
+        margin-left: auto;
+    }
+
+    .tip {
+        display: grid;
+        grid-template-columns: var(--w-btn-tip-mobile) var(--w-btn-tip-mobile);
+        grid-template-rows: var(--h-input-btn) var(--h-input-btn) var(--h-input-btn);
+        column-gap: 1.6rem;
+        padding: 1.8rem 0 3.8rem;
+    }
+
+    .tip__btn,
+    .tip__btn--custom {
+        width: var(--w-btn-tip-mobile);
+    }
+
+    .people__label {
+        margin: 0;
+    }
+
+    .people__input {
+        width: var(--w-input-mobile);
+        margin: .8rem 0 3.2rem 0;
+    }
+
+    .people__icon {
+        top: 38.5%;
+    }
+
+    .calculator--result {
+        width: 32.7rem;
+        min-width: 32.7rem;
+        height: 25.7rem;
+        min-height: 25.7rem;
+        padding: 4.5rem 2.2rem 2.4rem 2.4rem;
+    }
+
+    .result__calculation {
+        font-size: 3.2rem;
+        margin-bottom: 4rem;
+    }
+
+    .result__reset {
+        width: 28.1rem;
+        border-radius: .4rem;
+    }
+
 }
