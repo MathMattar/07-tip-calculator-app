@@ -147,7 +147,7 @@ main {
     cursor: pointer;
 }
 
-.tip__button:focus {
+.active {
     background-color: var(--strong-cyan);
     color: var(--very-dark-cyan);
 }
