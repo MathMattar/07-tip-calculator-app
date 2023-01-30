@@ -221,14 +221,18 @@ main {
     cursor: pointer;
 }
 
-.calculator__reset:hover {
-    background-color: var(--light-grayish-cyan);
+.--opacity-on{
+    opacity: .25;
+    cursor: auto;
 }
 
+.--opacity-off{
+    opacity: 1;
+}
 
-
-
-
+.--opacity-off:hover {
+    background-color: var(--light-grayish-cyan);
+}
 
 @media only screen and (max-width: 950px) {
 
