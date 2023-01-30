@@ -255,37 +255,35 @@ main {
         padding: 0 .8rem;
     }
 
-    .bill__input {
+    .input__box{
         width: var(--w-input-mobile);
         margin-top: 1.2rem;
         margin-right: auto;
-        margin-bottom: 3.8rem;
         margin-left: auto;
     }
 
     .tip {
+        margin: 3.8rem 0 3.8rem;
+    }
+
+    .tip__grid {
         display: grid;
         grid-template-columns: var(--w-btn-tip-mobile) var(--w-btn-tip-mobile);
         grid-template-rows: var(--h-input-btn) var(--h-input-btn) var(--h-input-btn);
         column-gap: 1.6rem;
-        padding: 1.8rem 0 3.8rem;
     }
 
-    .tip__btn,
-    .tip__btn--custom {
+    .tip__button,
+    .tip__button--custom {
         width: var(--w-btn-tip-mobile);
     }
 
-    .people__label {
-        margin: 0;
-    }
 
     .people__input {
-        width: var(--w-input-mobile);
         margin: .8rem 0 3.2rem 0;
     }
 
-    .people__icon {
+    .input__icon {
         top: 38.5%;
     }
 
@@ -302,7 +300,7 @@ main {
         margin-bottom: 4rem;
     }
 
-    .result__reset {
+    .calculator__reset {
         width: 28.1rem;
         border-radius: .4rem;
     }
