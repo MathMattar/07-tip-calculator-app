@@ -66,7 +66,6 @@ people.addEventListener("input", (e) => {
 });
 
 //View and hide alerts
-
 function alert(element, message) {
   let errorAlert = document.getElementById(element);
   errorAlert.innerHTML = message;
