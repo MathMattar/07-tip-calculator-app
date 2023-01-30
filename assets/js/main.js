@@ -1,25 +1,5 @@
-const form = document.getElementById("calculator");
-
-//Exibir e ocultar alertas
-
-function alert(element, message) {
-  let errorAlert = document.getElementById(element);
-  errorAlert.innerHTML = message;
-}
-
-function border(element) {
-  let input = element;
-  input.classList.add("alert__border");
-}
-
-function removeAlert(alert, element) {
-  input = element;
-  document.getElementById(alert).innerHTML = "";
-  element.classList.remove("alert__border");
-}
-
-//Capturar valores
-//Conta
+//Receber valores preenchidos pelo usuario
+//Bill
 const bill = document.getElementById("bill");
 let billValue = 0;
 
@@ -33,7 +13,7 @@ bill.addEventListener("input", (e) => {
   calculation();
 });
 
-//Gorjeta
+//Tip
 const buttons = document.querySelectorAll(".tip__button");
 
 buttons.forEach((button) => {
@@ -46,7 +26,7 @@ buttons.forEach((button) => {
   });
 });
 
-//Gorjeta customizada
+//Custom tip
 let buttonCustom = document.getElementById("btn-six");
 let buttonCustomValue = 0;
 
@@ -62,7 +42,7 @@ buttonCustom.addEventListener("input", (e) => {
   calculation();
 });
 
-//Número de pessoas
+//Number of people
 const people = document.getElementById("people");
 
 let peopleValue = 1;
@@ -85,7 +65,26 @@ people.addEventListener("input", (e) => {
   calculation();
 });
 
-//Calculo
+//View and hide alerts
+
+function alert(element, message) {
+  let errorAlert = document.getElementById(element);
+  errorAlert.innerHTML = message;
+}
+
+function border(element) {
+  let input = element;
+  input.classList.add("alert__border");
+}
+
+function removeAlert(alert, element) {
+  input = element;
+  document.getElementById(alert).innerHTML = "";
+  element.classList.remove("alert__border");
+}
+
+
+//Calculations
 let resultTip = document.getElementById("result-tip");
 let resultTotal = document.getElementById("result-total");
 
@@ -96,12 +95,12 @@ function calculation() {
   tipPerPerson = (billValue * tipAmout) / peopleValue;
   totalPerPerson = billValue / peopleValue + tipPerPerson;
 
-  //Imprimir resultado
+  //Print results
   resultTip.innerHTML = `$${tipPerPerson.toFixed(2)}`;
   resultTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
 }
 
-//Botão reset
+//Reset button
 const reset = document.getElementById("reset");
 
 function activeReset(){
