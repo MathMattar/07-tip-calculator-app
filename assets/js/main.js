@@ -1,29 +1,6 @@
 const form = document.getElementById("calculator");
-const bill = document.getElementById("bill");
-const buttons = document.querySelectorAll(".tip__button");
-const people = document.getElementById("people");
-const reset = document.getElementById("reset");
 
-let buttonCustom = document.getElementById("btn-six");
-let resultTip = document.getElementById("result-tip");
-let resultTotal = document.getElementById("result-total");
-
-//Verificar arquivos em branco, exibir e ocultar alertas
-function checkData() {
-  if (bill.value === "") {
-    alert("alert--bill", "Can't be zero");
-    border(bill);
-  } else {
-    removeAlert("alert--bill", bill);
-  }
-
-  if (people.value === "") {
-    alert("alert--people", "Can't be zero");
-    border(people);
-  } else {
-    removeAlert("alert--people", people);
-  }
-}
+//Exibir e ocultar alertas
 
 function alert(element, message) {
   let errorAlert = document.getElementById(element);
@@ -41,46 +18,102 @@ function removeAlert(alert, element) {
   element.classList.remove("alert__border");
 }
 
-form.addEventListener("keyup", (e) => {
-  e.preventDefault();
-
-  checkData();
-});
-
-//Capturar valores: Bill, Tip Amount e Number of People
+//Capturar valores
+//Conta
+const bill = document.getElementById("bill");
+let billValue = 0;
 
 bill.addEventListener("input", (e) => {
   e.preventDefault();
+  activeReset();
+
+  billValue = e.target.value.trim();
+  billValue = parseFloat(billValue);
+
+  calculation();
 });
 
+//Gorjeta
+const buttons = document.querySelectorAll(".tip__button");
+
 buttons.forEach((button) => {
-  button.addEventListener("click", function () {
+  button.addEventListener("click", (e) => {
     buttons.forEach((btn) => btn.classList.remove("active"));
-    this.classList.add("active");
+    button.classList.add("active");
+    tipAmout = parseFloat(e.target.value);
+
+    calculation();
   });
 });
 
+//Gorjeta customizada
+let buttonCustom = document.getElementById("btn-six");
+let buttonCustomValue = 0;
+
 buttonCustom.addEventListener("input", (e) => {
   e.preventDefault();
-  console.log(buttonCustom.value);
+
+  buttons.forEach((btn) => btn.classList.remove("active"));
+
+  buttonCustomValue = e.target.value.trim();
+  buttonCustomValue = parseFloat(buttonCustomValue);
+  tipAmout = buttonCustomValue / 100;
+
+  calculation();
 });
+
+//Número de pessoas
+const people = document.getElementById("people");
+
+let peopleValue = 1;
 
 people.addEventListener("input", (e) => {
   e.preventDefault();
+  activeReset();
+
+  peopleValue = e.target.value.trim();
+  peopleValue = parseFloat(peopleValue);
+
+  if (peopleValue === 0 || isNaN(peopleValue)) {
+    peopleValue = 1;
+    alert("alert--people", "Can't be zero");
+    border(people);
+  } else {
+    removeAlert("alert--people", people);
+  }
+
+  calculation();
 });
 
-//Equação
+//Calculo
+let resultTip = document.getElementById("result-tip");
+let resultTotal = document.getElementById("result-total");
 
-let billValue = bill.value;
-let tipButton = document.querySelector(".tip__button.active");
-let tipCustom = buttonCustom.value;
-let numberOfPeople = people.value;
+function calculation() {
+  let tipPerPerson;
+  let totalPerPerson;
 
-console.log(tipCustom)
+  tipPerPerson = (billValue * tipAmout) / peopleValue;
+  totalPerPerson = billValue / peopleValue + tipPerPerson;
 
-//Imprimir resultado
+  //Imprimir resultado
+  resultTip.innerHTML = `$${tipPerPerson.toFixed(2)}`;
+  resultTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
+}
 
-//Reset
+//Botão reset
+const reset = document.getElementById("reset");
+
+function activeReset(){
+  if (bill.value.length || people.value.length){
+    reset.classList.remove("--opacity-on");
+    reset.classList.add("--opacity-off")
+  } else {
+    reset.classList.add("--opacity-on");
+    reset.classList.remove("--opacity-off")
+  }
+}
+
 reset.addEventListener("click", (e) => {
   e.preventDefault();
 
