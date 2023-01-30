@@ -29,7 +29,7 @@ Os usuários devem ser capazes de:
 ### Screenshot
 
 <p align="center">
-    <img width="375px" src="./assets/presentation/mobile.jpg"></img>
+    <img width="375px" src="./assets/presentation/mobile.jps"></img>
 </p>
 
 ------
@@ -78,8 +78,8 @@ Aprimorando minhas habilidades com a metodologia HTML BEM.
 		<input type="number" class="tip__button--custom" id="btn-six" placeholder="Custom">
 	</div>
 
------------
-    
+```
+```HTML 
 <section class="calculator--result">
 	<section class="container-result">
 		<div class="result">
