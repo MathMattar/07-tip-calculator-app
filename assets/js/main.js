@@ -82,7 +82,6 @@ function removeAlert(alert, element) {
   element.classList.remove("alert__border");
 }
 
-
 //Calculations
 let resultTip = document.getElementById("result-tip");
 let resultTotal = document.getElementById("result-total");
@@ -91,24 +90,30 @@ function calculation() {
   let tipPerPerson;
   let totalPerPerson;
 
-  tipPerPerson = (billValue * tipAmout) / peopleValue;
-  totalPerPerson = billValue / peopleValue + tipPerPerson;
+  if (!isNaN(billValue)) {
+    tipPerPerson = (billValue * tipAmout) / peopleValue;
+    totalPerPerson = billValue / peopleValue + tipPerPerson;
 
-  //Print results
-  resultTip.innerHTML = `$${tipPerPerson.toFixed(2)}`;
-  resultTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
+    //Print results
+    resultTip.innerHTML = `$${tipPerPerson.toFixed(2)}`;
+    resultTotal.innerHTML = `$${totalPerPerson.toFixed(2)}`;
+  } else {
+    billValue = 0;
+    resultTip.innerHTML = `$0.00`;
+    resultTotal.innerHTML = `$0.00`;
+  }
 }
 
 //Reset button
 const reset = document.getElementById("reset");
 
-function activeReset(){
-  if (bill.value.length || people.value.length){
+function activeReset() {
+  if (bill.value.length || people.value.length) {
     reset.classList.remove("--opacity-on");
-    reset.classList.add("--opacity-off")
+    reset.classList.add("--opacity-off");
   } else {
     reset.classList.add("--opacity-on");
-    reset.classList.remove("--opacity-off")
+    reset.classList.remove("--opacity-off");
   }
 }
 
