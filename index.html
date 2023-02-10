@@ -38,7 +38,7 @@
 
                     <div class="input">
                         <img src="./assets/images/icon-dollar.svg" class="input__icon" alt="Icon dollar">
-                        <input type="number" class="input__box" id="bill">
+                        <input type="text" class="input__box" id="bill" pattern="/d*" minlength="1" maxlength="10">
                     </div>
                 </fieldset>
 
@@ -51,7 +51,7 @@
                         <button type="button" class="tip__button" id="btn-three" value=".15">15%</button>
                         <button type="button" class="tip__button" id="btn-four" value=".25">25%</button>
                         <button type="button" class="tip__button" id="btn-five" value=".5">50%</button>
-                        <input type="number" class="tip__button--custom" id="btn-six" placeholder="Custom">
+                        <input type="text" class="tip__button--custom" id="btn-six" placeholder="Custom" pattern="/d*" minlength="1" maxlength="6">
                     </div>
 
                 </fieldset>
@@ -64,7 +64,7 @@
 
                     <div class="input">
                         <img src="./assets/images/icon-person.svg" class="input__icon" alt="Icon person">
-                        <input type="number" class="input__box" id="people" placeholder="0">
+                        <input type="text" class="input__box" id="people" placeholder="0" pattern="/d*" minlength="1" maxlength="6">
                     </div>
                 </fieldset>
             </form>
