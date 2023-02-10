@@ -36,14 +36,19 @@ buttonCustom.addEventListener("input", (e) => {
   buttons.forEach((btn) => btn.classList.remove("active"));
 
   buttonCustomValue = e.target.value.trim();
-  if (!buttonCustomValue || buttonCustomValue[0] === "%") {
+  
+  // Verifica se a entrada tem somente um símbolo de porcentagem
+  if (buttonCustomValue.match(/^[.,]?%$/)) {
     buttonCustomValue = 0;
   }
+  
+  // Converte a entrada para float
   buttonCustomValue = parseFloat(buttonCustomValue);
   tipAmout = buttonCustomValue / 100;
 
   calculation();
 });
+
 
 //Number of people
 const people = document.getElementById("people");
