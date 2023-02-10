@@ -36,6 +36,9 @@ buttonCustom.addEventListener("input", (e) => {
   buttons.forEach((btn) => btn.classList.remove("active"));
 
   buttonCustomValue = e.target.value.trim();
+  if (!buttonCustomValue || buttonCustomValue[0] === "%") {
+    buttonCustomValue = 0;
+  }
   buttonCustomValue = parseFloat(buttonCustomValue);
   tipAmout = buttonCustomValue / 100;
 
