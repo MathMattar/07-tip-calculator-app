@@ -37,8 +37,8 @@ buttonCustom.addEventListener("input", (e) => {
 
   buttonCustomValue = e.target.value.trim();
   
-  // Verifica se a entrada tem somente um símbolo de porcentagem
-  if (buttonCustomValue.match(/^[.,]?%$/)) {
+  // Verifica se a entrada 
+  if (buttonCustomValue === "" || buttonCustomValue.match(/^[.,]?%$/)) {
     buttonCustomValue = 0;
   }
   
