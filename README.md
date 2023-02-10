@@ -29,19 +29,19 @@ Os usuários devem ser capazes de:
 ### Screenshot
 
 <p align="center">
-    <img width="375px" src="./assets/presentation/mobile.jps"></img>
+    <img width="375px" src="assets/presentation/Mobile.jpg"></img>
 </p>
 
 ------
 
 <p align="center">
-    <img width="768px" src="./assets/presentation/tablet.jpg"></img>
+    <img width="768px" src="./assets/presentation/Tablet.jpg"></img>
 </p>
 
 ------
 
 <p align="center">
-    <img width="768px" src="./assets/presentation/desktop.jpg"></img>
+    <img width="768px" src="./assets/presentation/Desktop.jpg"></img>
 </p>
 
 ### Links
